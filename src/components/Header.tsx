@@ -69,7 +69,7 @@ const Header = () => {
           </div>
           <Link
             to="/apply"
-            className="rounded-sm bg-secondary px-3 py-1 text-sm font-semibold text-secondary-foreground transition hover:opacity-90"
+            className="rounded-sm bg-accent px-3 py-1 text-sm font-semibold text-accent-foreground shadow-soft transition hover:bg-accent/90"
           >
             Apply Now
           </Link>

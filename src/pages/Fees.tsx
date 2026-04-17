@@ -47,7 +47,7 @@ const Fees = () => {
           <div className="mb-10 flex flex-wrap justify-center gap-4">
             <a
               href={`tel:${SCHOOL.primaryPhone}`}
-              className="gold-gradient inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-secondary-foreground shadow-elevated transition hover:opacity-90"
+              className="gold-gradient inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-accent-foreground shadow-elevated transition hover:opacity-90"
             >
               <Phone size={18} />
               Call for Current Fees: {SCHOOL.primaryPhoneDisplay}

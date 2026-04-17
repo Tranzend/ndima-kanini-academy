@@ -147,7 +147,7 @@ const Apply = () => {
 
               <button
                 type="submit"
-                className="gold-gradient inline-flex items-center gap-2 rounded-lg px-8 py-3 font-semibold text-secondary-foreground shadow-elevated transition hover:opacity-90"
+                className="gold-gradient inline-flex items-center gap-2 rounded-lg px-8 py-3 font-semibold text-accent-foreground shadow-elevated transition hover:opacity-90"
               >
                 Submit Application
                 <Send size={18} />

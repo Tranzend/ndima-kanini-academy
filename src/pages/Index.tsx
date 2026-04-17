@@ -67,7 +67,7 @@ const Index = () => {
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <Link
                 to="/apply"
-                className="gold-gradient inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-secondary-foreground shadow-elevated transition hover:opacity-90"
+                className="gold-gradient inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-accent-foreground shadow-elevated transition hover:opacity-90"
               >
                 Apply for Admission
                 <ArrowRight size={18} />
@@ -249,7 +249,7 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/apply"
-              className="gold-gradient inline-flex items-center gap-2 rounded-lg px-8 py-3 font-semibold text-secondary-foreground shadow-elevated transition hover:opacity-90"
+              className="gold-gradient inline-flex items-center gap-2 rounded-lg px-8 py-3 font-semibold text-accent-foreground shadow-elevated transition hover:opacity-90"
             >
               Start Application
               <ArrowRight size={18} />

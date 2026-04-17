@@ -40,7 +40,7 @@ const History = () => {
 
                   {/* Content */}
                   <div className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"}`}>
-                    <span className="gold-gradient inline-block rounded-full px-3 py-1 text-xs font-bold text-secondary-foreground">
+                    <span className="gold-gradient inline-block rounded-full px-3 py-1 text-xs font-bold text-accent-foreground">
                       {event.year}
                     </span>
                     <h3 className="mt-2 text-xl font-bold text-foreground font-serif">{event.title}</h3>
