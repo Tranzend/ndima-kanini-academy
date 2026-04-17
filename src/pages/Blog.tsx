@@ -1,65 +1,67 @@
-import { Link } from "react-router-dom";
 import { Calendar, ArrowRight, User } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import studentsImg from "@/assets/students-classroom.jpg";
 import prePrimaryImg from "@/assets/pre-primary.jpg";
 import upperPrimaryImg from "@/assets/upper-primary.jpg";
+import boardingImg from "@/assets/boarding.jpg";
+import sportsImg from "@/assets/sports.jpg";
+import { SCHOOL } from "@/lib/school";
 
 const blogPosts = [
   {
     id: 1,
-    title: "Embracing CBC: How Green Valley Academy is Leading the Way",
-    excerpt: "Discover how our school has successfully transitioned to the Competency-Based Curriculum and the positive impact it's having on our learners' academic journey.",
+    title: "Embracing CBC at Ndima Kanini: A Year in Review",
+    excerpt: "How our teachers and learners are thriving under Kenya's Competency-Based Curriculum, with hands-on, learner-centred lessons across every grade.",
     date: "February 1, 2026",
-    author: "Mr. James Odhiambo",
+    author: "The Head Teacher",
     category: "Academics",
     image: studentsImg,
   },
   {
     id: 2,
-    title: "The Importance of Play-Based Learning in Early Years Education",
-    excerpt: "Research shows that play is the most effective way young children learn. Here's how our Pre-Primary section incorporates play into everyday learning.",
+    title: "Why Play-Based Learning Works in Pre-Primary",
+    excerpt: "Research shows play is the most effective way young children learn. Here's how our PP1 and PP2 classes weave play into every part of the day.",
     date: "January 20, 2026",
-    author: "Mrs. Esther Muthoni",
+    author: "Pre-Primary Coordinator",
     category: "Pre-Primary",
     image: prePrimaryImg,
   },
   {
     id: 3,
-    title: "STEM Education: Preparing Kenyan Learners for the Future",
-    excerpt: "Our new STEM Innovation Lab is revolutionizing how students engage with science and technology. Learn about the exciting projects our learners are working on.",
+    title: "Life as a Boarder at Ndima Kanini",
+    excerpt: "From morning prep to evening prayers — a glimpse into the structured, joyful daily routine that shapes our boarding pupils.",
     date: "January 10, 2026",
-    author: "Mr. John Kipchoge",
-    category: "Innovation",
-    image: upperPrimaryImg,
+    author: "Boarding Mistress",
+    category: "Boarding",
+    image: boardingImg,
   },
   {
     id: 4,
     title: "Building Character Through Community Service",
-    excerpt: "How our community service programme helps Upper Primary learners develop empathy, leadership, and a sense of social responsibility.",
+    excerpt: "How our community service programme helps Upper Primary learners develop empathy, leadership and a sense of social responsibility.",
     date: "December 15, 2025",
-    author: "Mrs. Patricia Adhiambo",
+    author: "Guidance & Counselling",
     category: "Character",
     image: studentsImg,
   },
   {
     id: 5,
-    title: "Tips for Parents: Supporting Your Child's Learning at Home",
-    excerpt: "Practical strategies for parents to create a supportive learning environment and stay engaged with their child's education journey.",
+    title: "Tips for Parents: Supporting Learning at Home",
+    excerpt: "Practical strategies for parents in Karatina and beyond to create a supportive learning environment outside school hours.",
     date: "December 5, 2025",
-    author: "Mrs. Sarah Kimani",
+    author: "The Deputy Head Teacher",
     category: "Parents",
     image: prePrimaryImg,
   },
   {
     id: 6,
-    title: "Sports Day 2025: Celebrating Athletic Excellence",
-    excerpt: "A roundup of the highlights from our annual Sports Day, including record-breaking performances and memorable moments from all sections.",
+    title: "Sports Day Highlights: Celebrating Athletic Excellence",
+    excerpt: "A roundup of our annual Sports Day, including thrilling races, house-team rivalries and unforgettable moments from every section.",
     date: "November 20, 2025",
-    author: "Mr. Michael Barasa",
+    author: "Games Master",
     category: "Sports",
-    image: upperPrimaryImg,
+    image: sportsImg,
   },
 ];
 
@@ -68,7 +70,7 @@ const Blog = () => {
     <Layout>
       <PageHero
         title="Our Blog"
-        subtitle="News, insights, and stories from the Green Valley Academy community."
+        subtitle={`News, insights and stories from the ${SCHOOL.name} community.`}
         breadcrumb="Blog"
       />
 
@@ -77,7 +79,7 @@ const Blog = () => {
           {/* Featured post */}
           <div className="mb-12 overflow-hidden rounded-xl bg-card shadow-elevated lg:flex">
             <div className="aspect-[16/9] lg:aspect-auto lg:w-1/2">
-              <img src={blogPosts[0].image} alt={blogPosts[0].title} className="h-full w-full object-cover" />
+              <img src={blogPosts[0].image} alt={blogPosts[0].title} loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-col justify-center p-6 lg:w-1/2 lg:p-10">
               <span className="mb-2 inline-block w-fit rounded-full bg-secondary/20 px-3 py-1 text-xs font-semibold text-secondary">
@@ -97,7 +99,7 @@ const Blog = () => {
             {blogPosts.slice(1).map((post) => (
               <article key={post.id} className="group overflow-hidden rounded-xl bg-card shadow-card transition hover:shadow-elevated">
                 <div className="aspect-[16/10] overflow-hidden">
-                  <img src={post.image} alt={post.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <img src={post.image} alt={post.title} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
                   <span className="mb-2 inline-block rounded-full bg-secondary/20 px-2.5 py-0.5 text-xs font-semibold text-secondary">

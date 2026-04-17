@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Mail, Facebook } from "lucide-react";
 import schoolCrest from "@/assets/school-crest.png";
+import { SCHOOL } from "@/lib/school";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -9,7 +10,7 @@ const navItems = [
     label: "About",
     children: [
       { label: "About Us", path: "/about" },
-      { label: "Mission & Values", path: "/mission-values" },
+      { label: "Mission, Motto & Values", path: "/mission-values" },
       { label: "Our History", path: "/history" },
       { label: "Our Staff", path: "/staff" },
     ],
@@ -20,9 +21,11 @@ const navItems = [
       { label: "Pre-Primary", path: "/pre-primary" },
       { label: "Lower Primary", path: "/lower-primary" },
       { label: "Upper Primary", path: "/upper-primary" },
+      { label: "Day & Boarding", path: "/boarding" },
       { label: "Fees Structure", path: "/fees" },
     ],
   },
+  { label: "Gallery", path: "/gallery" },
   { label: "Blog", path: "/blog" },
   { label: "Events", path: "/events" },
   { label: "Apply", path: "/apply" },
@@ -40,18 +43,34 @@ const Header = () => {
     <>
       {/* Top bar */}
       <div className="hero-gradient text-primary-foreground">
-        <div className="container mx-auto flex items-center justify-between px-4 py-2 text-sm">
-          <div className="flex items-center gap-4">
-            <a href="tel:+254700000000" className="flex items-center gap-1 opacity-90 hover:opacity-100">
+        <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <a href={`tel:${SCHOOL.primaryPhone}`} className="flex items-center gap-1 opacity-90 hover:opacity-100">
               <Phone size={14} />
-              <span>+254 700 000 000</span>
+              <span>{SCHOOL.primaryPhoneDisplay}</span>
             </a>
-            <a href="mailto:info@greenvalleyacademy.ac.ke" className="hidden items-center gap-1 opacity-90 hover:opacity-100 sm:flex">
+            <a
+              href={`mailto:${SCHOOL.email}`}
+              className="hidden items-center gap-1 opacity-90 hover:opacity-100 sm:flex"
+            >
               <Mail size={14} />
-              <span>info@greenvalleyacademy.ac.ke</span>
+              <span>{SCHOOL.email}</span>
+            </a>
+            <a
+              href={SCHOOL.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-1 opacity-90 hover:opacity-100 md:flex"
+              aria-label="Facebook"
+            >
+              <Facebook size={14} />
+              <span>Follow us</span>
             </a>
           </div>
-          <Link to="/apply" className="rounded-sm bg-secondary px-3 py-1 text-sm font-semibold text-secondary-foreground transition hover:opacity-90">
+          <Link
+            to="/apply"
+            className="rounded-sm bg-secondary px-3 py-1 text-sm font-semibold text-secondary-foreground transition hover:opacity-90"
+          >
             Apply Now
           </Link>
         </div>
@@ -61,10 +80,10 @@ const Header = () => {
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img src={schoolCrest} alt="Green Valley Academy Crest" className="h-12 w-12 object-contain" />
+            <img src={schoolCrest} alt={`${SCHOOL.name} crest`} className="h-12 w-12 object-contain" />
             <div>
-              <h1 className="text-lg font-bold leading-tight text-foreground font-serif">Green Valley Academy</h1>
-              <p className="text-xs text-muted-foreground font-sans">Nurturing Excellence Since 1985</p>
+              <h1 className="text-lg font-bold leading-tight text-foreground font-serif">{SCHOOL.name}</h1>
+              <p className="text-xs italic text-muted-foreground font-sans">"{SCHOOL.motto}"</p>
             </div>
           </Link>
 
@@ -83,7 +102,7 @@ const Header = () => {
                     <ChevronDown size={14} />
                   </button>
                   {openDropdown === item.label && (
-                    <div className="absolute left-0 top-full min-w-[200px] rounded-md border border-border bg-popover p-1 shadow-elevated animate-fade-in">
+                    <div className="absolute left-0 top-full min-w-[220px] rounded-md border border-border bg-popover p-1 shadow-elevated animate-fade-in">
                       {item.children.map((child) => (
                         <Link
                           key={child.path}
@@ -116,6 +135,7 @@ const Header = () => {
           <button
             className="rounded-md p-2 text-foreground lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

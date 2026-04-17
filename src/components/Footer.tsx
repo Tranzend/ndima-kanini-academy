@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook } from "lucide-react";
 import schoolCrest from "@/assets/school-crest.png";
+import { SCHOOL } from "@/lib/school";
 
 const Footer = () => {
   return (
@@ -11,12 +12,22 @@ const Footer = () => {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <img src={schoolCrest} alt="Crest" className="h-12 w-12 object-contain brightness-110" />
-              <h3 className="text-lg font-bold font-serif">Green Valley Academy</h3>
+              <h3 className="text-lg font-bold font-serif">{SCHOOL.name}</h3>
             </div>
+            <p className="mb-3 text-sm italic opacity-90">"{SCHOOL.motto}"</p>
             <p className="text-sm leading-relaxed opacity-80">
-              Providing quality CBC education in Kenya since 1985. We nurture every child's potential through
-              holistic learning, character development, and academic excellence.
+              A mixed day and boarding primary school in Karatina, offering quality CBC education that nurtures every
+              child's potential through holistic learning and character development.
             </p>
+            <a
+              href={SCHOOL.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary-foreground/10 px-3 py-2 text-sm font-semibold transition hover:bg-primary-foreground/20"
+            >
+              <Facebook size={16} />
+              Follow on Facebook
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -25,7 +36,9 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               {[
                 { label: "About Us", path: "/about" },
+                { label: "Mission & Motto", path: "/mission-values" },
                 { label: "Admissions", path: "/apply" },
+                { label: "Gallery", path: "/gallery" },
                 { label: "Blog", path: "/blog" },
                 { label: "Events", path: "/events" },
                 { label: "Fees Structure", path: "/fees" },
@@ -48,6 +61,7 @@ const Footer = () => {
                 { label: "Pre-Primary (PP1 & PP2)", path: "/pre-primary" },
                 { label: "Lower Primary (Grade 1-3)", path: "/lower-primary" },
                 { label: "Upper Primary (Grade 4-6)", path: "/upper-primary" },
+                { label: "Day & Boarding", path: "/boarding" },
                 { label: "Our Staff", path: "/staff" },
                 { label: "Our History", path: "/history" },
               ].map((link) => (
@@ -66,26 +80,34 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0 opacity-70" />
-                <span className="opacity-80">P.O. Box 12345, Nairobi, Kenya</span>
+                <span className="opacity-80">{SCHOOL.address}</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone size={16} className="shrink-0 opacity-70" />
-                <span className="opacity-80">+254 700 000 000</span>
+              <li className="flex items-start gap-2">
+                <Phone size={16} className="mt-0.5 shrink-0 opacity-70" />
+                <div className="flex flex-col opacity-80">
+                  {SCHOOL.phones.map((p) => (
+                    <a key={p} href={`tel:+254${p.replace(/\s|^0/g, "")}`} className="hover:underline">
+                      {p}
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0 opacity-70" />
-                <span className="opacity-80">info@greenvalleyacademy.ac.ke</span>
+                <a href={`mailto:${SCHOOL.email}`} className="opacity-80 hover:underline">
+                  {SCHOOL.email}
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Clock size={16} className="mt-0.5 shrink-0 opacity-70" />
-                <span className="opacity-80">Mon - Fri: 7:00 AM - 5:00 PM</span>
+                <span className="opacity-80">{SCHOOL.officeHours}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-10 border-t border-primary-foreground/20 pt-6 text-center text-sm opacity-60">
-          <p>&copy; {new Date().getFullYear()} Green Valley Academy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {SCHOOL.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

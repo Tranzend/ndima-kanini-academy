@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Users, BookOpen, Trophy, ArrowRight, Calendar, Star } from "lucide-react";
+import { GraduationCap, Users, BookOpen, Trophy, ArrowRight, Calendar, Star, Bed, Sun } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImage from "@/assets/hero-school.jpg";
 import studentsImage from "@/assets/students-classroom.jpg";
 import prePrimaryImg from "@/assets/pre-primary.jpg";
 import lowerPrimaryImg from "@/assets/lower-primary.jpg";
 import upperPrimaryImg from "@/assets/upper-primary.jpg";
+import { SCHOOL } from "@/lib/school";
 
 const stats = [
-  { icon: Users, label: "Students", value: "850+" },
-  { icon: GraduationCap, label: "Qualified Teachers", value: "65" },
-  { icon: Trophy, label: "Years of Excellence", value: "40" },
-  { icon: Star, label: "KCPE Mean Score", value: "380+" },
+  { icon: Users, label: "Learners", value: "500+" },
+  { icon: GraduationCap, label: "Qualified Teachers", value: "30+" },
+  { icon: Bed, label: "Day & Boarding", value: "Mixed" },
+  { icon: Star, label: "CBC Aligned", value: "PP1 - Grade 6" },
 ];
 
 const sections = [
@@ -23,22 +24,22 @@ const sections = [
   },
   {
     title: "Lower Primary",
-    description: "Grade 1-3 — Building core competencies in literacy, numeracy, and creativity.",
+    description: "Grade 1-3 — Building core competencies in literacy, numeracy and creativity.",
     image: lowerPrimaryImg,
     path: "/lower-primary",
   },
   {
     title: "Upper Primary",
-    description: "Grade 4-6 — Preparing learners for academic excellence and national examinations.",
+    description: "Grade 4-6 — Preparing learners for academic excellence and Junior Secondary.",
     image: upperPrimaryImg,
     path: "/upper-primary",
   },
 ];
 
 const upcomingEvents = [
-  { date: "Mar 15", title: "Term 1 Parents Day", description: "Join us for academic progress discussions." },
-  { date: "Apr 5", title: "Inter-School Sports Gala", description: "Annual athletics and sports competition." },
-  { date: "Apr 22", title: "Science & Innovation Fair", description: "Showcasing student projects and inventions." },
+  { date: "Mar 15", title: "Term 1 Parents Day", description: "Meet teachers and review your child's progress." },
+  { date: "Apr 5", title: "Inter-School Sports Gala", description: "Annual athletics and games competition." },
+  { date: "Apr 22", title: "Science & Innovation Fair", description: "Showcasing learner projects and inventions." },
 ];
 
 const Index = () => {
@@ -47,21 +48,21 @@ const Index = () => {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Green Valley Academy Campus" className="h-full w-full object-cover" />
+          <img src={heroImage} alt={`${SCHOOL.name} campus in Karatina`} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
         </div>
         <div className="container relative mx-auto px-4 py-24 md:py-32 lg:py-40">
           <div className="max-w-2xl text-primary-foreground">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest opacity-80 animate-fade-in">
-              Welcome to Green Valley Academy
+              Welcome to {SCHOOL.name}
             </p>
             <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl font-serif animate-slide-up">
-              Nurturing Excellence,{" "}
-              <span className="text-secondary">Shaping Futures</span>
+              Love and Justice{" "}
+              <span className="text-secondary">to the Child</span>
             </h1>
             <p className="mb-8 text-lg leading-relaxed opacity-90 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-              A premier Kenyan grade school offering quality CBC education from Pre-Primary through
-              Upper Primary. We develop well-rounded learners ready to excel in the 21st century.
+              A mixed day and boarding primary school in Karatina, offering quality CBC education from Pre-Primary
+              through Upper Primary. We nurture confident, compassionate learners ready for tomorrow.
             </p>
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <Link
@@ -104,16 +105,16 @@ const Index = () => {
             <div>
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-secondary">About Our School</p>
               <h2 className="mb-4 text-3xl font-bold text-foreground font-serif md:text-4xl">
-                A Legacy of Academic Excellence in Kenya
+                Quality Education Rooted in Love & Justice
               </h2>
               <p className="mb-4 leading-relaxed text-muted-foreground">
-                Founded in 1985, Green Valley Academy has been at the forefront of quality education
-                in Kenya. Our school follows the Competency-Based Curriculum (CBC) and is committed
-                to developing holistic learners who excel academically, socially, and morally.
+                {SCHOOL.name} is a mixed day and boarding primary school in Karatina, Nyeri County. We follow Kenya's
+                Competency-Based Curriculum (CBC) and are committed to developing holistic learners who excel
+                academically, socially and morally.
               </p>
               <p className="mb-6 leading-relaxed text-muted-foreground">
-                With state-of-the-art facilities, dedicated teachers, and a nurturing environment,
-                we provide every child with the tools they need to succeed.
+                Our motto, <em>"{SCHOOL.motto}"</em>, guides everything we do — every learner is welcomed, valued and
+                supported to reach their full potential.
               </p>
               <Link
                 to="/about"
@@ -124,7 +125,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="overflow-hidden rounded-xl shadow-elevated">
-              <img src={studentsImage} alt="Students in classroom" className="h-full w-full object-cover" />
+              <img src={studentsImage} alt="Learners in classroom" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
@@ -150,6 +151,7 @@ const Index = () => {
                   <img
                     src={section.image}
                     alt={section.title}
+                    loading="lazy"
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -167,8 +169,46 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Events */}
+      {/* Day & Boarding teaser */}
       <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid gap-6 md:grid-cols-2">
+            <Link
+              to="/boarding"
+              className="group overflow-hidden rounded-xl border border-border bg-card p-8 shadow-card transition hover:shadow-elevated"
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <Bed className="text-primary" size={24} />
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-foreground font-serif">Boarding Section</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
+                Comfortable dormitories, balanced meals, supervised prep and pastoral care — a true home away from home.
+              </p>
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition group-hover:gap-2">
+                Learn more <ArrowRight size={16} />
+              </span>
+            </Link>
+            <Link
+              to="/boarding"
+              className="group overflow-hidden rounded-xl border border-border bg-card p-8 shadow-card transition hover:shadow-elevated"
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/20">
+                <Sun className="text-secondary" size={24} />
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-foreground font-serif">Day Section</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
+                Reliable school transport, hot lunch, extended care and the same quality CBC programme as our boarders.
+              </p>
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition group-hover:gap-2">
+                Learn more <ArrowRight size={16} />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Events */}
+      <section className="bg-muted/30 py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-12 flex items-end justify-between">
             <div>
@@ -204,7 +244,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-4 text-3xl font-bold font-serif md:text-4xl">Begin Your Child's Journey Today</h2>
           <p className="mx-auto mb-8 max-w-xl text-lg opacity-80">
-            Admissions are now open for the 2026 academic year. Join a community that believes in every child's potential.
+            Admissions are open. Join a community in Karatina that believes in every child's potential.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
