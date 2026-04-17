@@ -11,13 +11,18 @@ const Footer = () => {
           {/* School info */}
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <img src={schoolCrest} alt="Crest" className="h-12 w-12 object-contain brightness-110" />
+              <img
+                src={schoolCrest}
+                alt="Crest"
+                className="h-12 w-12 object-contain brightness-110"
+              />
               <h3 className="text-lg font-bold font-serif">{SCHOOL.name}</h3>
             </div>
             <p className="mb-3 text-sm italic opacity-90">"{SCHOOL.motto}"</p>
             <p className="text-sm leading-relaxed opacity-80">
-              A mixed day and boarding primary school in Karatina, offering quality CBC education that nurtures every
-              child's potential through holistic learning and character development.
+              A mixed day and boarding primary school in Karatina, offering
+              quality CBC education that nurtures every child's potential
+              through holistic learning and character development.
             </p>
             <a
               href={SCHOOL.facebook}
@@ -32,7 +37,9 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider opacity-70">Quick Links</h4>
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider opacity-70">
+              Quick Links
+            </h4>
             <ul className="space-y-2 text-sm">
               {[
                 { label: "About Us", path: "/about" },
@@ -45,7 +52,10 @@ const Footer = () => {
                 { label: "Contact Us", path: "/contact" },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="opacity-80 transition hover:opacity-100 hover:underline">
+                  <Link
+                    to={link.path}
+                    className="opacity-80 transition hover:opacity-100 hover:underline"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -55,7 +65,9 @@ const Footer = () => {
 
           {/* Academics */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider opacity-70">Academics</h4>
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider opacity-70">
+              Academics
+            </h4>
             <ul className="space-y-2 text-sm">
               {[
                 { label: "Pre-Primary (PP1 & PP2)", path: "/pre-primary" },
@@ -66,7 +78,10 @@ const Footer = () => {
                 { label: "Our History", path: "/history" },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="opacity-80 transition hover:opacity-100 hover:underline">
+                  <Link
+                    to={link.path}
+                    className="opacity-80 transition hover:opacity-100 hover:underline"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -76,7 +91,9 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider opacity-70">Contact Info</h4>
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider opacity-70">
+              Contact Info
+            </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0 opacity-70" />
@@ -86,7 +103,11 @@ const Footer = () => {
                 <Phone size={16} className="mt-0.5 shrink-0 opacity-70" />
                 <div className="flex flex-col opacity-80">
                   {SCHOOL.phones.map((p) => (
-                    <a key={p} href={`tel:+254${p.replace(/\s|^0/g, "")}`} className="hover:underline">
+                    <a
+                      key={p}
+                      href={`tel:+254${p.replace(/\s|^0/g, "")}`}
+                      className="hover:underline"
+                    >
                       {p}
                     </a>
                   ))}
@@ -94,7 +115,10 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0 opacity-70" />
-                <a href={`mailto:${SCHOOL.email}`} className="opacity-80 hover:underline">
+                <a
+                  href={`mailto:${SCHOOL.email}`}
+                  className="opacity-80 hover:underline"
+                >
                   {SCHOOL.email}
                 </a>
               </li>
@@ -107,7 +131,10 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 border-t border-primary-foreground/20 pt-6 text-center text-sm opacity-60">
-          <p>&copy; {new Date().getFullYear()} {SCHOOL.name}. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} {SCHOOL.name}. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

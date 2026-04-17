@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Facebook } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  CheckCircle,
+  Facebook,
+} from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { SCHOOL } from "@/lib/school";
@@ -25,7 +33,9 @@ const Contact = () => {
           <div className="grid gap-10 lg:grid-cols-3">
             {/* Contact info */}
             <div>
-              <h3 className="mb-6 text-xl font-bold text-foreground font-serif">Get In Touch</h3>
+              <h3 className="mb-6 text-xl font-bold text-foreground font-serif">
+                Get In Touch
+              </h3>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -33,8 +43,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Address</h4>
-                    <p className="text-sm text-muted-foreground">{SCHOOL.address}</p>
-                    <p className="text-sm text-muted-foreground">{SCHOOL.location}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {SCHOOL.address}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {SCHOOL.location}
+                    </p>
                   </div>
                 </div>
 
@@ -47,7 +61,10 @@ const Contact = () => {
                     <ul className="text-sm text-muted-foreground">
                       {SCHOOL.phones.map((p) => (
                         <li key={p}>
-                          <a href={`tel:+254${p.replace(/\s|^0/g, "")}`} className="hover:text-primary hover:underline">
+                          <a
+                            href={`tel:+254${p.replace(/\s|^0/g, "")}`}
+                            className="hover:text-primary hover:underline"
+                          >
                             {p}
                           </a>
                         </li>
@@ -76,8 +93,12 @@ const Contact = () => {
                     <Clock className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Office Hours</h4>
-                    <p className="whitespace-pre-line text-sm text-muted-foreground">{SCHOOL.officeHours}</p>
+                    <h4 className="font-semibold text-foreground">
+                      Office Hours
+                    </h4>
+                    <p className="whitespace-pre-line text-sm text-muted-foreground">
+                      {SCHOOL.officeHours}
+                    </p>
                   </div>
                 </div>
 
@@ -105,28 +126,61 @@ const Contact = () => {
               {submitted ? (
                 <div className="flex flex-col items-center justify-center rounded-xl bg-card p-10 shadow-card text-center">
                   <CheckCircle className="mb-4 text-primary" size={48} />
-                  <h3 className="mb-2 text-xl font-bold text-foreground font-serif">Message Sent!</h3>
-                  <p className="text-muted-foreground">Thank you for reaching out. We'll respond within 24-48 hours.</p>
+                  <h3 className="mb-2 text-xl font-bold text-foreground font-serif">
+                    Message Sent!
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Thank you for reaching out. We'll respond within 24-48
+                    hours.
+                  </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="rounded-xl bg-card p-6 shadow-card md:p-8">
-                  <h3 className="mb-6 text-xl font-bold text-foreground font-serif">Send Us a Message</h3>
+                <form
+                  onSubmit={handleSubmit}
+                  className="rounded-xl bg-card p-6 shadow-card md:p-8"
+                >
+                  <h3 className="mb-6 text-xl font-bold text-foreground font-serif">
+                    Send Us a Message
+                  </h3>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-foreground">Your Name *</label>
-                      <input type="text" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring" />
+                      <label className="mb-1 block text-sm font-medium text-foreground">
+                        Your Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring"
+                      />
                     </div>
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-foreground">Email Address *</label>
-                      <input type="email" required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring" />
+                      <label className="mb-1 block text-sm font-medium text-foreground">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring"
+                      />
                     </div>
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-foreground">Phone Number</label>
-                      <input type="tel" placeholder="07xx xxx xxx" className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring" />
+                      <label className="mb-1 block text-sm font-medium text-foreground">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        placeholder="07xx xxx xxx"
+                        className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring"
+                      />
                     </div>
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-foreground">Subject *</label>
-                      <select required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring">
+                      <label className="mb-1 block text-sm font-medium text-foreground">
+                        Subject *
+                      </label>
+                      <select
+                        required
+                        className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring"
+                      >
                         <option value="">Select</option>
                         <option value="admissions">Admissions Inquiry</option>
                         <option value="academics">Academic Information</option>
@@ -137,8 +191,14 @@ const Contact = () => {
                       </select>
                     </div>
                     <div className="md:col-span-2">
-                      <label className="mb-1 block text-sm font-medium text-foreground">Message *</label>
-                      <textarea rows={5} required className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring" />
+                      <label className="mb-1 block text-sm font-medium text-foreground">
+                        Message *
+                      </label>
+                      <textarea
+                        rows={5}
+                        required
+                        className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring"
+                      />
                     </div>
                   </div>
                   <button

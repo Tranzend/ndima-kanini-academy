@@ -29,18 +29,51 @@ const LowerPrimary = () => {
         description:
           "The Lower Primary curriculum follows the KICD CBC framework, with learning organised around key subjects and cross-cutting competencies that prepare learners for Upper Primary.",
         subjects: [
-          { name: "English Language", description: "Reading, writing, speaking and listening through stories, comprehension and grammar." },
-          { name: "Kiswahili Language", description: "Developing fluency in Kenya's national language through integrated activities and creative expression." },
-          { name: "Mathematics", description: "Numbers, operations, measurement, geometry and data handling through practical applications." },
-          { name: "Environmental & Hygiene", description: "Exploring the natural world, healthy living and responsible citizenship." },
-          { name: "Religious Education (CRE/IRE)", description: "Moral development and spiritual growth aligned with family values." },
-          { name: "Creative Arts & PE", description: "Visual arts, performing arts and physical education for holistic development." },
-          { name: "Movement Activities", description: "Games and exercises that build coordination, teamwork and discipline." },
-          { name: "Indigenous Languages", description: "Appreciation of mother tongue and local cultural heritage." },
+          {
+            name: "English Language",
+            description:
+              "Reading, writing, speaking and listening through stories, comprehension and grammar.",
+          },
+          {
+            name: "Kiswahili Language",
+            description:
+              "Developing fluency in Kenya's national language through integrated activities and creative expression.",
+          },
+          {
+            name: "Mathematics",
+            description:
+              "Numbers, operations, measurement, geometry and data handling through practical applications.",
+          },
+          {
+            name: "Environmental & Hygiene",
+            description:
+              "Exploring the natural world, healthy living and responsible citizenship.",
+          },
+          {
+            name: "Religious Education (CRE/IRE)",
+            description:
+              "Moral development and spiritual growth aligned with family values.",
+          },
+          {
+            name: "Creative Arts & PE",
+            description:
+              "Visual arts, performing arts and physical education for holistic development.",
+          },
+          {
+            name: "Movement Activities",
+            description:
+              "Games and exercises that build coordination, teamwork and discipline.",
+          },
+          {
+            name: "Indigenous Languages",
+            description:
+              "Appreciation of mother tongue and local cultural heritage.",
+          },
         ],
       }}
       excellence={{
-        description: "Our Lower Primary learners consistently achieve strong outcomes in both academic and co-curricular activities, setting the stage for success in Upper Primary.",
+        description:
+          "Our Lower Primary learners consistently achieve strong outcomes in both academic and co-curricular activities, setting the stage for success in Upper Primary.",
         achievements: [
           "Strong reading culture supported by a well-stocked library and weekly read-alouds.",
           "Active participation in sub-county and county-level music, drama and verse-speaking.",

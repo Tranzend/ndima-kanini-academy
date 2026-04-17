@@ -29,18 +29,50 @@ const UpperPrimary = () => {
         description:
           "The Upper Primary CBC curriculum builds on competencies developed in Lower Primary, with increasing depth and rigour across all learning areas in preparation for Junior Secondary.",
         subjects: [
-          { name: "English Language", description: "Advanced reading comprehension, essay writing, grammar and public speaking." },
-          { name: "Kiswahili Language", description: "Advanced fluency, creative writing and appreciation of Kiswahili literature." },
-          { name: "Mathematics", description: "Advanced arithmetic, basic algebra, geometry, statistics and mathematical reasoning." },
-          { name: "Integrated Science", description: "Biology, chemistry and physics concepts with practical experiments." },
-          { name: "Social Studies & CRE", description: "History, geography, governance and moral/religious education." },
-          { name: "Agriculture & Nutrition", description: "Practical farming, food systems and nutrition science." },
-          { name: "Creative Arts & Sports", description: "Advanced arts, music, drama and competitive sports." },
-          { name: "Computer Science", description: "Coding, digital citizenship, multimedia creation and computational thinking." },
+          {
+            name: "English Language",
+            description:
+              "Advanced reading comprehension, essay writing, grammar and public speaking.",
+          },
+          {
+            name: "Kiswahili Language",
+            description:
+              "Advanced fluency, creative writing and appreciation of Kiswahili literature.",
+          },
+          {
+            name: "Mathematics",
+            description:
+              "Advanced arithmetic, basic algebra, geometry, statistics and mathematical reasoning.",
+          },
+          {
+            name: "Integrated Science",
+            description:
+              "Biology, chemistry and physics concepts with practical experiments.",
+          },
+          {
+            name: "Social Studies & CRE",
+            description:
+              "History, geography, governance and moral/religious education.",
+          },
+          {
+            name: "Agriculture & Nutrition",
+            description:
+              "Practical farming, food systems and nutrition science.",
+          },
+          {
+            name: "Creative Arts & Sports",
+            description: "Advanced arts, music, drama and competitive sports.",
+          },
+          {
+            name: "Computer Science",
+            description:
+              "Coding, digital citizenship, multimedia creation and computational thinking.",
+          },
         ],
       }}
       excellence={{
-        description: "Our Upper Primary section has a proud tradition of academic excellence, consistently producing top performers in assessments and co-curricular competitions.",
+        description:
+          "Our Upper Primary section has a proud tradition of academic excellence, consistently producing top performers in assessments and co-curricular competitions.",
         achievements: [
           "Strong performance in KPSEA and end-of-year competency assessments.",
           "Active participation and awards in regional Science and Innovation fairs.",

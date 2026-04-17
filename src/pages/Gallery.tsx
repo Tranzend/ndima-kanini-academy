@@ -14,7 +14,14 @@ import graduationImg from "@/assets/graduation.jpg";
 import culturalImg from "@/assets/cultural.jpg";
 import { SCHOOL } from "@/lib/school";
 
-const categories = ["All", "Campus", "Classrooms", "Boarding", "Sports", "Events"] as const;
+const categories = [
+  "All",
+  "Campus",
+  "Classrooms",
+  "Boarding",
+  "Sports",
+  "Events",
+] as const;
 
 type Category = (typeof categories)[number];
 
@@ -26,23 +33,74 @@ interface GalleryItem {
 }
 
 const items: GalleryItem[] = [
-  { src: heroImg, alt: "Ndima Kanini Academy campus", category: "Campus", caption: "Our serene Karatina campus" },
-  { src: assemblyImg, alt: "Morning assembly", category: "Campus", caption: "Morning assembly parade" },
-  { src: classroomImg, alt: "Engaged learners in class", category: "Classrooms", caption: "Engaged learners in class" },
-  { src: preImg, alt: "Pre-primary play-based learning", category: "Classrooms", caption: "Pre-primary play-based learning" },
-  { src: lowerImg, alt: "Lower primary reading session", category: "Classrooms", caption: "Lower primary reading session" },
-  { src: upperImg, alt: "Upper primary science experiment", category: "Classrooms", caption: "Upper primary science experiment" },
-  { src: boardingImg, alt: "Boarding dormitory", category: "Boarding", caption: "Clean, safe boarding dormitories" },
-  { src: sportsImg, alt: "Football on the school field", category: "Sports", caption: "Football on the school field" },
-  { src: graduationImg, alt: "Graduation ceremony", category: "Events", caption: "Pre-primary graduation day" },
-  { src: culturalImg, alt: "Cultural day performance", category: "Events", caption: "Cultural day celebration" },
+  {
+    src: heroImg,
+    alt: "Ndima Kanini Academy campus",
+    category: "Campus",
+    caption: "Our serene Karatina campus",
+  },
+  {
+    src: assemblyImg,
+    alt: "Morning assembly",
+    category: "Campus",
+    caption: "Morning assembly parade",
+  },
+  {
+    src: classroomImg,
+    alt: "Engaged learners in class",
+    category: "Classrooms",
+    caption: "Engaged learners in class",
+  },
+  {
+    src: preImg,
+    alt: "Pre-primary play-based learning",
+    category: "Classrooms",
+    caption: "Pre-primary play-based learning",
+  },
+  {
+    src: lowerImg,
+    alt: "Lower primary reading session",
+    category: "Classrooms",
+    caption: "Lower primary reading session",
+  },
+  {
+    src: upperImg,
+    alt: "Upper primary science experiment",
+    category: "Classrooms",
+    caption: "Upper primary science experiment",
+  },
+  {
+    src: boardingImg,
+    alt: "Boarding dormitory",
+    category: "Boarding",
+    caption: "Clean, safe boarding dormitories",
+  },
+  {
+    src: sportsImg,
+    alt: "Football on the school field",
+    category: "Sports",
+    caption: "Football on the school field",
+  },
+  {
+    src: graduationImg,
+    alt: "Graduation ceremony",
+    category: "Events",
+    caption: "Pre-primary graduation day",
+  },
+  {
+    src: culturalImg,
+    alt: "Cultural day performance",
+    category: "Events",
+    caption: "Cultural day celebration",
+  },
 ];
 
 const Gallery = () => {
   const [filter, setFilter] = useState<Category>("All");
   const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
 
-  const filtered = filter === "All" ? items : items.filter((i) => i.category === filter);
+  const filtered =
+    filter === "All" ? items : items.filter((i) => i.category === filter);
 
   return (
     <Layout>
@@ -124,9 +182,18 @@ const Gallery = () => {
           >
             <X size={20} />
           </button>
-          <figure className="max-h-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <img src={lightbox.src} alt={lightbox.alt} className="max-h-[80vh] w-auto rounded-lg shadow-elevated" />
-            <figcaption className="mt-3 text-center text-sm text-primary-foreground">{lightbox.caption}</figcaption>
+          <figure
+            className="max-h-full max-w-5xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="max-h-[80vh] w-auto rounded-lg shadow-elevated"
+            />
+            <figcaption className="mt-3 text-center text-sm text-primary-foreground">
+              {lightbox.caption}
+            </figcaption>
           </figure>
         </div>
       )}

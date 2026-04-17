@@ -29,16 +29,41 @@ const PrePrimary = () => {
         description:
           "Our Pre-Primary curriculum is aligned with the KICD CBC guidelines for early years education, focusing on developing foundational competencies through integrated learning activities.",
         subjects: [
-          { name: "Language Activities", description: "Building literacy through stories, songs, rhymes and conversation in English and Kiswahili." },
-          { name: "Mathematical Activities", description: "Number concepts, sorting, patterns and basic problem-solving through hands-on materials." },
-          { name: "Environmental Activities", description: "Exploring the natural and social environment through observation and simple experiments." },
-          { name: "Creative Activities", description: "Art, music, dance and drama to develop self-expression and fine motor skills." },
-          { name: "Psychomotor Activities", description: "Physical exercises, games and movement to build coordination and gross motor skills." },
-          { name: "Religious Education", description: "Moral values, spiritual growth and character development through age-appropriate activities." },
+          {
+            name: "Language Activities",
+            description:
+              "Building literacy through stories, songs, rhymes and conversation in English and Kiswahili.",
+          },
+          {
+            name: "Mathematical Activities",
+            description:
+              "Number concepts, sorting, patterns and basic problem-solving through hands-on materials.",
+          },
+          {
+            name: "Environmental Activities",
+            description:
+              "Exploring the natural and social environment through observation and simple experiments.",
+          },
+          {
+            name: "Creative Activities",
+            description:
+              "Art, music, dance and drama to develop self-expression and fine motor skills.",
+          },
+          {
+            name: "Psychomotor Activities",
+            description:
+              "Physical exercises, games and movement to build coordination and gross motor skills.",
+          },
+          {
+            name: "Religious Education",
+            description:
+              "Moral values, spiritual growth and character development through age-appropriate activities.",
+          },
         ],
       }}
       excellence={{
-        description: "Our Pre-Primary learners consistently demonstrate strong readiness for Lower Primary, thanks to our comprehensive and engaging early years programme.",
+        description:
+          "Our Pre-Primary learners consistently demonstrate strong readiness for Lower Primary, thanks to our comprehensive and engaging early years programme.",
         achievements: [
           "Strong transition to Grade 1 with confident literacy and numeracy foundations.",
           "Annual Pre-Primary exhibition showcasing creative projects and learning portfolios.",
