@@ -1,16 +1,14 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import { SCHOOL } from "@/lib/school";
 
 const timelineEvents = [
-  { year: "1985", title: "Foundation", description: "Green Valley Academy was founded by Mrs. Grace Wanjiku with just 45 students and 3 teachers in a small plot in Nairobi's outskirts." },
-  { year: "1990", title: "First KCPE Class", description: "Our first class of Standard 8 learners sat for KCPE, achieving outstanding results and establishing our reputation for academic excellence." },
-  { year: "1998", title: "Campus Expansion", description: "Construction of the new wing including a modern library, science lab, and computer room. Enrollment grew to over 300 students." },
-  { year: "2005", title: "Sports & Arts Centre", description: "Opening of the multi-purpose sports hall and performing arts centre, enabling holistic student development beyond academics." },
-  { year: "2010", title: "25th Anniversary", description: "Celebrated 25 years of excellence with the launch of the Green Valley Scholarship Fund for outstanding but underprivileged learners." },
-  { year: "2017", title: "CBC Transition", description: "Successfully transitioned to the Competency-Based Curriculum (CBC), becoming one of the first schools in the region to fully adopt the new system." },
-  { year: "2020", title: "Digital Learning", description: "Launched our digital learning platform during the COVID-19 pandemic, ensuring continuity of education for all our learners." },
-  { year: "2023", title: "STEM Lab Launch", description: "Opened the state-of-the-art STEM Innovation Lab, equipped with robotics kits, 3D printers, and advanced computing resources." },
-  { year: "2025", title: "40th Anniversary", description: "Celebrating four decades of educational excellence with over 850 students and 65 dedicated teachers." },
+  { year: "Foundation", title: "A Vision Born in Karatina", description: `${SCHOOL.name} was founded in Karatina with a clear mission inspired by our motto: "${SCHOOL.motto}." A small team of dedicated educators welcomed the first cohort of learners.` },
+  { year: "Early Years", title: "Building Strong Foundations", description: "Established a warm, child-centred learning environment with small class sizes, qualified teachers and a strong emphasis on character formation alongside academics." },
+  { year: "Growth", title: "Expanding Facilities", description: "Added new classrooms, a library, play areas and a school field as enrolment grew. Day scholars were joined by our first boarding pupils, making us a true mixed day and boarding school." },
+  { year: "CBC Transition", title: "Embracing the New Curriculum", description: "Successfully transitioned to Kenya's Competency-Based Curriculum (CBC), training all teachers and re-equipping classrooms to deliver the new learning experience effectively." },
+  { year: "Boarding Section", title: "Home Away From Home", description: "Strengthened our boarding programme with comfortable dormitories, balanced meals, supervised prep and dedicated pastoral care — welcoming families from across central Kenya." },
+  { year: "Today", title: "A Trusted Karatina Institution", description: "We continue to nurture confident, compassionate and competent learners — proudly serving families in Karatina and beyond, guided every day by love and justice for the child." },
 ];
 
 const History = () => {
@@ -18,7 +16,7 @@ const History = () => {
     <Layout>
       <PageHero
         title="Our History"
-        subtitle="Four decades of nurturing young minds and shaping future leaders."
+        subtitle={`The story of ${SCHOOL.name} — built on love, justice and a passion for nurturing every child.`}
         breadcrumb="About"
       />
 

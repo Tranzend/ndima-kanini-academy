@@ -1,14 +1,15 @@
-import { BookOpen, Heart, Target, Eye } from "lucide-react";
+import { BookOpen, Heart, Target, Eye, Bed, MapPin } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import studentsImage from "@/assets/students-classroom.jpg";
+import { SCHOOL } from "@/lib/school";
 
 const About = () => {
   return (
     <Layout>
       <PageHero
-        title="About Green Valley Academy"
-        subtitle="A premier Kenyan grade school dedicated to nurturing academic excellence, moral integrity, and holistic development."
+        title={`About ${SCHOOL.name}`}
+        subtitle="A mixed day and boarding primary school in Karatina, dedicated to nurturing academic excellence, moral integrity and holistic development."
         breadcrumb="About Us"
       />
 
@@ -18,25 +19,47 @@ const About = () => {
             <div>
               <h2 className="mb-4 text-3xl font-bold text-foreground font-serif">Who We Are</h2>
               <p className="mb-4 leading-relaxed text-muted-foreground">
-                Green Valley Academy is a registered grade school located in Nairobi, Kenya. Established in 1985,
-                we have grown from a small community school into one of the most respected learning institutions
-                in the region.
+                {SCHOOL.name} is a registered mixed day and boarding primary school located in Karatina, Nyeri County.
+                We serve learners from Pre-Primary (PP1 & PP2) through Upper Primary (Grade 4-6), following Kenya's
+                Competency-Based Curriculum (CBC).
               </p>
               <p className="mb-4 leading-relaxed text-muted-foreground">
-                Our school serves learners from Pre-Primary (PP1 & PP2) through Upper Primary (Grade 4-6),
-                following the Competency-Based Curriculum (CBC) as prescribed by the Kenya Institute of
-                Curriculum Development (KICD).
+                Guided by our motto, <em>"{SCHOOL.motto},"</em> we strive to give every child a safe, nurturing and
+                stimulating environment in which to discover their unique gifts and grow into responsible, productive
+                members of society.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                We pride ourselves on providing a safe, inclusive, and stimulating learning environment where
-                every child is encouraged to explore their potential and develop into a responsible, productive
-                member of society.
+                Our boarding programme offers a true home away from home, while our day section is supported with
+                reliable transport, hot lunch and extended care — making quality education accessible to families
+                across Karatina and beyond.
               </p>
             </div>
             <div className="overflow-hidden rounded-xl shadow-elevated">
-              <img src={studentsImage} alt="Our students" className="h-full w-full object-cover" />
+              <img src={studentsImage} alt="Our learners" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Quick facts */}
+      <section className="border-y border-border bg-muted/30 py-12">
+        <div className="container mx-auto grid gap-6 px-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: MapPin, label: "Location", value: "Karatina, Nyeri" },
+            { icon: Bed, label: "Type", value: "Day & Boarding" },
+            { icon: BookOpen, label: "Curriculum", value: "CBC (KICD)" },
+            { icon: Heart, label: "Motto", value: SCHOOL.motto },
+          ].map((f) => (
+            <div key={f.label} className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <f.icon className="text-primary" size={20} />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{f.label}</p>
+                <p className="font-semibold text-foreground">{f.value}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -56,7 +79,7 @@ const About = () => {
               {
                 icon: Heart,
                 title: "Holistic Growth",
-                description: "Nurturing academic, social, spiritual, and physical development.",
+                description: "Nurturing academic, social, spiritual and physical development of every child.",
               },
               {
                 icon: BookOpen,
@@ -65,8 +88,8 @@ const About = () => {
               },
               {
                 icon: Eye,
-                title: "Modern Facilities",
-                description: "Well-equipped classrooms, labs, library, sports fields, and digital learning tools.",
+                title: "Day & Boarding",
+                description: "Flexible options with safe boarding facilities and reliable day-scholar transport.",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-lg bg-card p-6 shadow-card text-center">

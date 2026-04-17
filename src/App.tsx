@@ -11,6 +11,8 @@ import Staff from "./pages/Staff";
 import PrePrimary from "./pages/PrePrimary";
 import LowerPrimary from "./pages/LowerPrimary";
 import UpperPrimary from "./pages/UpperPrimary";
+import Boarding from "./pages/Boarding";
+import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import Events from "./pages/Events";
 import Apply from "./pages/Apply";
@@ -35,6 +37,8 @@ const App = () => (
           <Route path="/pre-primary" element={<PrePrimary />} />
           <Route path="/lower-primary" element={<LowerPrimary />} />
           <Route path="/upper-primary" element={<UpperPrimary />} />
+          <Route path="/boarding" element={<Boarding />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/events" element={<Events />} />
           <Route path="/apply" element={<Apply />} />

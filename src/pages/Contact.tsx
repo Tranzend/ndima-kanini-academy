@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Facebook } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import { SCHOOL } from "@/lib/school";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -15,7 +16,7 @@ const Contact = () => {
     <Layout>
       <PageHero
         title="Contact Us"
-        subtitle="Get in touch with Green Valley Academy. We'd love to hear from you."
+        subtitle={`Get in touch with ${SCHOOL.name}. We'd love to hear from you.`}
         breadcrumb="Contact"
       />
 
@@ -26,22 +27,76 @@ const Contact = () => {
             <div>
               <h3 className="mb-6 text-xl font-bold text-foreground font-serif">Get In Touch</h3>
               <div className="space-y-6">
-                {[
-                  { icon: MapPin, title: "Address", content: "P.O. Box 12345\nGreen Valley Road, Off Kiambu Road\nNairobi, Kenya" },
-                  { icon: Phone, title: "Phone", content: "+254 700 000 000\n+254 711 111 111" },
-                  { icon: Mail, title: "Email", content: "info@greenvalleyacademy.ac.ke\nadmissions@greenvalleyacademy.ac.ke" },
-                  { icon: Clock, title: "Office Hours", content: "Monday - Friday: 7:00 AM - 5:00 PM\nSaturday: 8:00 AM - 12:00 PM" },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <item.icon className="text-primary" size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">{item.title}</h4>
-                      <p className="whitespace-pre-line text-sm text-muted-foreground">{item.content}</p>
-                    </div>
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <MapPin className="text-primary" size={20} />
                   </div>
-                ))}
+                  <div>
+                    <h4 className="font-semibold text-foreground">Address</h4>
+                    <p className="text-sm text-muted-foreground">{SCHOOL.address}</p>
+                    <p className="text-sm text-muted-foreground">{SCHOOL.location}</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <Phone className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Phone</h4>
+                    <ul className="text-sm text-muted-foreground">
+                      {SCHOOL.phones.map((p) => (
+                        <li key={p}>
+                          <a href={`tel:+254${p.replace(/\s|^0/g, "")}`} className="hover:text-primary hover:underline">
+                            {p}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <Mail className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Email</h4>
+                    <a
+                      href={`mailto:${SCHOOL.email}`}
+                      className="text-sm text-muted-foreground hover:text-primary hover:underline"
+                    >
+                      {SCHOOL.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <Clock className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Office Hours</h4>
+                    <p className="whitespace-pre-line text-sm text-muted-foreground">{SCHOOL.officeHours}</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <Facebook className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Facebook</h4>
+                    <a
+                      href={SCHOOL.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary hover:underline"
+                    >
+                      facebook.com/ndimakaniniacademy
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -67,7 +122,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label className="mb-1 block text-sm font-medium text-foreground">Phone Number</label>
-                      <input type="tel" className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring" />
+                      <input type="tel" placeholder="07xx xxx xxx" className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring" />
                     </div>
                     <div>
                       <label className="mb-1 block text-sm font-medium text-foreground">Subject *</label>
@@ -75,6 +130,7 @@ const Contact = () => {
                         <option value="">Select</option>
                         <option value="admissions">Admissions Inquiry</option>
                         <option value="academics">Academic Information</option>
+                        <option value="boarding">Boarding Inquiry</option>
                         <option value="fees">Fees & Payments</option>
                         <option value="general">General Inquiry</option>
                         <option value="complaint">Complaint / Feedback</option>
@@ -99,15 +155,15 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map placeholder */}
-      <section className="h-64 bg-muted md:h-80">
-        <div className="flex h-full items-center justify-center">
-          <div className="text-center">
-            <MapPin className="mx-auto mb-2 text-muted-foreground" size={32} />
-            <p className="text-sm text-muted-foreground">Google Maps embed would go here</p>
-            <p className="text-xs text-muted-foreground">Green Valley Road, Off Kiambu Road, Nairobi</p>
-          </div>
-        </div>
+      {/* Map */}
+      <section className="h-72 bg-muted md:h-96">
+        <iframe
+          title={`${SCHOOL.name} location in Karatina`}
+          src="https://www.google.com/maps?q=Karatina,Kenya&output=embed"
+          className="h-full w-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </section>
     </Layout>
   );

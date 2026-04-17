@@ -1,14 +1,15 @@
 import { Calendar, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import { SCHOOL } from "@/lib/school";
 
 const events = [
   {
     title: "Term 1 Parents Day",
     date: "March 15, 2026",
     time: "8:00 AM - 1:00 PM",
-    location: "School Auditorium",
-    description: "Join us for a comprehensive review of your child's academic progress, meet the teachers, and discuss goals for the remainder of the term.",
+    location: "School Hall",
+    description: "Join us for a comprehensive review of your child's academic progress, meet the teachers and discuss goals for the remainder of the term.",
     category: "Academic",
   },
   {
@@ -16,23 +17,31 @@ const events = [
     date: "April 5, 2026",
     time: "7:00 AM - 5:00 PM",
     location: "School Sports Field",
-    description: "Annual athletics and sports competition featuring 12 schools from the region. Events include track and field, swimming, and team sports.",
+    description: "Annual athletics and games competition featuring schools from across Nyeri County. Events include track and field and team sports.",
     category: "Sports",
   },
   {
     title: "Science & Innovation Fair",
     date: "April 22, 2026",
     time: "9:00 AM - 3:00 PM",
-    location: "STEM Innovation Lab",
+    location: "Upper Primary Block",
     description: "Upper Primary learners showcase their science projects and innovative solutions to real-world problems. Open to parents and the community.",
     category: "Academic",
+  },
+  {
+    title: "Boarders' Visiting Day",
+    date: "May 3, 2026",
+    time: "10:00 AM - 4:00 PM",
+    location: "School Compound",
+    description: "Parents and guardians of boarders are warmly invited to spend the day with their children. Light refreshments will be served.",
+    category: "Boarding",
   },
   {
     title: "Cultural Day Celebration",
     date: "May 10, 2026",
     time: "8:00 AM - 2:00 PM",
     location: "School Grounds",
-    description: "A celebration of Kenya's diverse cultural heritage through music, dance, food, and traditional attire. All sections participate.",
+    description: "A celebration of Kenya's diverse cultural heritage through music, dance, food and traditional attire. All sections participate.",
     category: "Cultural",
   },
   {
@@ -40,23 +49,23 @@ const events = [
     date: "June 7, 2026",
     time: "9:00 AM - 12:00 PM",
     location: "All Classrooms",
-    description: "Prospective parents and families are invited to tour our facilities, meet teachers, and learn about our CBC programmes.",
+    description: "Prospective parents and families are invited to tour our facilities, meet teachers and learn about our CBC programme and boarding life.",
     category: "Admissions",
   },
   {
-    title: "Annual Music Festival",
+    title: "Annual Music & Drama Festival",
     date: "July 18, 2026",
     time: "10:00 AM - 4:00 PM",
-    location: "Performing Arts Centre",
-    description: "Students perform music, drama, and dance pieces in this annual celebration of creative expression and talent.",
+    location: "School Hall",
+    description: "Pupils perform music, drama and dance pieces in this celebration of creative expression and talent.",
     category: "Arts",
   },
   {
     title: "End of Year Prize Giving",
     date: "November 28, 2026",
     time: "9:00 AM - 1:00 PM",
-    location: "School Auditorium",
-    description: "Annual awards ceremony recognizing academic excellence, character, leadership, and outstanding achievements across all sections.",
+    location: "School Hall",
+    description: "Annual awards ceremony recognising academic excellence, character, leadership and outstanding achievement across all sections.",
     category: "Academic",
   },
 ];
@@ -67,6 +76,7 @@ const categoryColors: Record<string, string> = {
   Cultural: "bg-secondary/20 text-secondary",
   Admissions: "bg-primary/10 text-primary",
   Arts: "bg-secondary/20 text-secondary",
+  Boarding: "bg-primary/10 text-primary",
 };
 
 const Events = () => {
@@ -74,7 +84,7 @@ const Events = () => {
     <Layout>
       <PageHero
         title="School Events"
-        subtitle="Stay updated with important dates, activities, and celebrations at Green Valley Academy."
+        subtitle={`Stay updated with important dates, activities and celebrations at ${SCHOOL.name}.`}
         breadcrumb="Events"
       />
 
