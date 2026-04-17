@@ -2,7 +2,7 @@ import SectionPage from "@/components/SectionPage";
 import prePrimaryImg from "@/assets/pre-primary.jpg";
 import studentsImg from "@/assets/students-classroom.jpg";
 import culturalImg from "@/assets/cultural.jpg";
-import graduationImg from "@/assets/graduation.jpg";
+import scoutsImg from "@/assets/scouts.jpg";
 
 const PrePrimary = () => {
   return (
@@ -77,7 +77,7 @@ const PrePrimary = () => {
         { src: prePrimaryImg, alt: "Pre-Primary play-based learning" },
         { src: studentsImg, alt: "Pre-Primary classroom" },
         { src: culturalImg, alt: "Pre-Primary cultural performance" },
-        { src: graduationImg, alt: "Pre-Primary graduation day" },
+        { src: scoutsImg, alt: "Pre-Primary scouts day" },
       ]}
     />
   );

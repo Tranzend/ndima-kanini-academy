@@ -10,7 +10,7 @@ import upperImg from "@/assets/upper-primary.jpg";
 import boardingImg from "@/assets/boarding.jpg";
 import sportsImg from "@/assets/sports.jpg";
 import assemblyImg from "@/assets/assembly.jpg";
-import graduationImg from "@/assets/graduation.jpg";
+import scoutsImg from "@/assets/scouts.jpg";
 import culturalImg from "@/assets/cultural.jpg";
 import { SCHOOL } from "@/lib/school";
 
@@ -82,10 +82,10 @@ const items: GalleryItem[] = [
     caption: "Football on the school field",
   },
   {
-    src: graduationImg,
-    alt: "Graduation ceremony",
+    src: scoutsImg,
+    alt: "Scouts ceremony",
     category: "Events",
-    caption: "Pre-primary graduation day",
+    caption: "Pre-primary scouts day",
   },
   {
     src: culturalImg,

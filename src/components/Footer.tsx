@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Facebook } from "lucide-react";
-import schoolCrest from "@/assets/school-crest.png";
+import logo from "@/assets/logo.png";
 import { SCHOOL } from "@/lib/school";
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <img
-                src={schoolCrest}
+                src={logo}
                 alt="Crest"
                 className="h-12 w-12 object-contain brightness-110"
               />

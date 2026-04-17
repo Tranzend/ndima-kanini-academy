@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone, Mail, Facebook } from "lucide-react";
-import schoolCrest from "@/assets/school-crest.png";
+import logo from "@/assets/logo.png";
 import { SCHOOL } from "@/lib/school";
 
 const navItems = [
@@ -84,7 +84,7 @@ const Header = () => {
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
             <img
-              src={schoolCrest}
+              src={logo}
               alt={`${SCHOOL.name} crest`}
               className="h-12 w-12 object-contain"
             />

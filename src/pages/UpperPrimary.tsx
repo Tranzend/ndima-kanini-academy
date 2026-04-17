@@ -2,7 +2,7 @@ import SectionPage from "@/components/SectionPage";
 import upperPrimaryImg from "@/assets/upper-primary.jpg";
 import studentsImg from "@/assets/students-classroom.jpg";
 import sportsImg from "@/assets/sports.jpg";
-import graduationImg from "@/assets/graduation.jpg";
+import scoutsImg from "@/assets/scouts.jpg";
 
 const UpperPrimary = () => {
   return (
@@ -88,7 +88,7 @@ const UpperPrimary = () => {
         { src: upperPrimaryImg, alt: "Science experiment in class" },
         { src: studentsImg, alt: "Classroom engagement" },
         { src: sportsImg, alt: "Athletics on the field" },
-        { src: graduationImg, alt: "Grade 6 graduation" },
+        { src: scoutsImg, alt: "Grade 6 scouts day" },
       ]}
     />
   );
